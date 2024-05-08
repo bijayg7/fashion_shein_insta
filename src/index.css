@@ -164,3 +164,10 @@ input{
 .box-3{
   margin: 0;
 }
+
+.error-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

@@ -10,13 +10,13 @@ import { getDatabase, ref, push } from "firebase/database"
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAKiTkxikSGQoBHMet1xkz6M30sam9h03Y",
-  authDomain: "listforinsta.firebaseapp.com",
-  databaseURL: "https://listforinsta-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "listforinsta",
-  storageBucket: "listforinsta.appspot.com",
-  messagingSenderId: "717868487701",
-  appId: "1:717868487701:web:0bd823c295d64aab886a1c"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_Auth_Domain,
+  databaseURL: import.meta.env.VITE_Database_URL,
+  projectId: import.meta.env.VITE_Project_Id,
+  storageBucket: import.meta.env.VITE_Storage_Bucket,
+  messagingSenderId: import.meta.env.VITE_Messaging_Sender_Id,
+  appId: import.meta.env.VITE_App_Id 
 }
 
 const app = initializeApp(firebaseConfig)
