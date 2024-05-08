@@ -5,12 +5,9 @@ function Error() {
 	return (
         <div className="error-container">
 			<div className="error-body">
-				<h1>
-					Error Occured...
-				</h1>
-				<h3>
-					Please try again later.
-				</h3>
+				<h1>An unexpected error occured.</h1>
+				<p>Please try again later.</p>
+				<p className="arrow">&#10227;</p>
 			</div>
 		</div>
 	);

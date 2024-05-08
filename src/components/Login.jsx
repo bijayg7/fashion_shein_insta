@@ -75,6 +75,9 @@ function Login() {
 
 
             </div>
+            <div className="forgotbox">
+              <p className="forgot-password">Forgot password?</p>
+            </div>
             
             <div className="login-btn-box">
               
@@ -92,13 +95,11 @@ function Login() {
               </span>
               <p className="fb-link">Log in with Facebook</p>
             </div>
-            <div className="forgotbox">
-              <p className="forgot-password">Forgotten your password?</p>
-            </div>
+            
         </div>
 
         <div className="box-2">
-          <p>Don't have a account? <span className="sign-up">Sign up</span></p>
+          <p>Don't have an account? <span className="sign-up">Sign up</span></p>
         </div>
         <div className="box-3">
         <div className="get-app">
