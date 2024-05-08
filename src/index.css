@@ -21,6 +21,7 @@
 .box-1{
   height: 500px;
   width: 350px;
+  margin: 0;
 }
 
 .input-box{
@@ -62,7 +63,8 @@ input{
   top:70px;
   cursor: pointer;
   margin: 0;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight:500;
 
 }
 
@@ -127,8 +129,12 @@ input{
 }
 
 .forgot-password{
-  color: rgb(109, 109, 109);
+  color: #0095f6;
   font-size: 14px;
+  position: relative;
+  left: 70px;
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .appstore{
@@ -148,7 +154,7 @@ input{
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 10px 0 ;
+  margin: 0 ;
 }
 .sign-up{
   color: #0095f6;
@@ -166,8 +172,22 @@ input{
 }
 
 .error-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 200px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+.arrow{
+  margin: 0;
+  font-size: 50px;
+  color: rgb(105, 104, 104);
 }
 
